@@ -13,7 +13,7 @@ class UploadedFile extends SplFileInfo
     private int $error;
     private int $size;
 
-    public function __construct(string $path, string $originalName, string $mimeType = null, int $error = null, int $size = 0)
+    public function __construct(string $path, string $originalName, ?string $mimeType = null, ?int $error = null, int $size = 0)
     {
         parent::__construct($path);
 

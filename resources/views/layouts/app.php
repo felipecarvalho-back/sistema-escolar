@@ -34,6 +34,18 @@
                         <span class="text-xs block text-slate-500 font-medium tracking-widest uppercase">Sistema de Diários</span>
                     </div>
                 </div>
+                
+                <?php if (session()->has('user')): ?>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/dashboard" class="text-slate-600 hover:text-indigo-600 font-medium transition">Início</a>
+                    <?php if ((session('user')['perfil'] ?? '') === 'secretaria'): ?>
+                        <a href="/alunos" class="text-slate-600 hover:text-indigo-600 font-medium transition">Alunos</a>
+                        <a href="/turmas" class="text-slate-600 hover:text-indigo-600 font-medium transition">Turmas</a>
+                    <?php endif; ?>
+                    <a href="/ocorrencias" class="text-slate-600 hover:text-indigo-600 font-medium transition">Ocorrências</a>
+                </div>
+                <?php endif; ?>
+
                 <div class="flex items-center space-x-6">
                     <div class="text-right hidden sm:block">
                         <span class="text-sm font-semibold text-slate-800 block"><?= htmlspecialchars(session('user')['nome'] ?? 'Usuário') ?></span>
@@ -67,8 +79,10 @@
         <?php if (session()->has('errors')): ?>
             <div class="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 shadow-sm">
                 <ul class="list-disc list-inside text-sm">
-                    <?php foreach (session()->get('errors') as $error): ?>
-                        <li><?= htmlspecialchars($error) ?></li>
+                    <?php foreach (session()->get('errors') as $field => $messages): ?>
+                        <?php foreach ((array)$messages as $message): ?>
+                            <li><?= htmlspecialchars($message) ?></li>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
                 </ul>
             </div>

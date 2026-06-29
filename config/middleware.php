@@ -46,8 +46,7 @@ return [
      |
      */
     'aliases' => [
-        // 'auth' => \App\Middleware\AuthMiddleware::class,
-        // 'auth.api' => \App\Middleware\AuthApiMiddleware::class,
-        // 'guest' => \App\Middleware\RedirectIfAuthenticated::class,
+        'auth' => \App\Middleware\AuthMiddleware::class,
+        'perfil' => \App\Middleware\VerificarPerfilMiddleware::class,
     ],
 ];

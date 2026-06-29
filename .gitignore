@@ -1,7 +1,7 @@
 # Arquivos e diretórios que devem ser ignorados
 
 vendor/
-.agent/
+.agents/
 .env
 .cache/
 storage/framework/

@@ -1,0 +1,13 @@
+<?php
+
+namespace {{namespace}};
+
+use Core\Http\Controller;
+
+class {{class}} extends Controller
+{
+    public function index()
+    {
+        // $this->view('nome_da_view', ['dados' => 'exemplo']);
+    }
+}

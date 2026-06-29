@@ -58,7 +58,7 @@
                                         <td class="py-3.5 px-4">
                                             <?php if ($t->professor_coordenador_id): ?>
                                                 <span class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs font-semibold">
-                                                    Prof. ID <?= $t->professor_coordenador_id ?>
+                                                    <?= htmlspecialchars($t->coordenador?->nome ?? 'Prof. ID ' . $t->professor_coordenador_id) ?>
                                                 </span>
                                             <?php else: ?>
                                                 <span class="text-xs text-slate-400 italic">Sem Coordenador</span>

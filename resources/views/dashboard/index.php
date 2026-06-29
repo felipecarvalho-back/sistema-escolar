@@ -99,38 +99,6 @@
             </div>
         <?php endif; ?>
         
-        <?php if ($user['perfil'] === 'secretaria'): ?>
-            <!-- Cadastrar Usuário para a Secretaria continua aqui como uma ação rápida -->
-            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 max-w-lg mt-8">
-                <h3 class="text-lg font-bold text-slate-900 mb-4">Ação Rápida: Cadastrar Novo Usuário</h3>
-                <form action="/secretaria/usuarios" method="POST" class="space-y-3">
-                    <?= csrf_field() ?? '' ?>
-                    <div>
-                        <label class="block text-slate-700 text-xs font-semibold mb-1" for="nome_usuario">Nome Completo</label>
-                        <input class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-indigo-500" id="nome_usuario" type="text" name="nome" required>
-                    </div>
-                    <div>
-                        <label class="block text-slate-700 text-xs font-semibold mb-1" for="email_usuario">E-mail</label>
-                        <input class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-indigo-500" id="email_usuario" type="email" name="email" required>
-                    </div>
-                    <div>
-                        <label class="block text-slate-700 text-xs font-semibold mb-1" for="senha_usuario">Senha Inicial</label>
-                        <input class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-indigo-500" id="senha_usuario" type="password" name="senha" required>
-                    </div>
-                    <div>
-                        <label class="block text-slate-700 text-xs font-semibold mb-1" for="perfil_usuario">Perfil</label>
-                        <select class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-indigo-500" id="perfil_usuario" name="perfil" required>
-                            <option value="">Selecione o perfil...</option>
-                            <option value="professor">Professor / Coordenador</option>
-                            <option value="responsavel">Responsável / Pai de Aluno</option>
-                            <option value="secretaria">Secretária / Administrativo</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-sm transition duration-200">
-                        Criar Conta de Acesso
-                    </button>
-                </form>
-            </div>
-        <?php endif; ?>
+
     </div>
 <?php $this->endSection(); ?>

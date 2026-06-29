@@ -41,6 +41,7 @@
                     <?php if ((session('user')['perfil'] ?? '') === 'secretaria'): ?>
                         <a href="/alunos" class="text-slate-600 hover:text-indigo-600 font-medium transition">Alunos</a>
                         <a href="/turmas" class="text-slate-600 hover:text-indigo-600 font-medium transition">Turmas</a>
+                        <a href="/usuarios" class="text-slate-600 hover:text-indigo-600 font-medium transition">Usuários</a>
                     <?php endif; ?>
                     <a href="/ocorrencias" class="text-slate-600 hover:text-indigo-600 font-medium transition">Ocorrências</a>
                 </div>

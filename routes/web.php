@@ -21,7 +21,8 @@ Route::post('/secretaria/vincular-responsavel', [\App\Controllers\AlunoControlle
 
 Route::get('/turmas', [\App\Controllers\TurmaController::class, 'index'])->middleware('auth');
 Route::post('/secretaria/turmas', [\App\Controllers\TurmaController::class, 'store'])->middleware('auth');
-Route::post('/secretaria/usuarios', [DashboardController::class, 'storeUsuario'])->middleware('auth');
+Route::get('/usuarios', [\App\Controllers\UsuarioController::class, 'index'])->middleware('auth');
+Route::post('/secretaria/usuarios', [\App\Controllers\UsuarioController::class, 'store'])->middleware('auth');
 
 // Inclui Rotas de Autenticação Auxiliares
 require_once __DIR__ . '/auth.php';

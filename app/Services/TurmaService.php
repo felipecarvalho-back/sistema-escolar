@@ -11,7 +11,7 @@ class TurmaService
      */
     public function getAllTurmas(): array
     {
-        return (new Turma())->all();
+        return (new Turma())->with('coordenador')->get();
     }
 
     /**
